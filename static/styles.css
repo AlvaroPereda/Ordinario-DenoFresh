@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: rgb(230, 230, 230);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: grey;
+        color: white;
+        padding: 15px;
+        position: relative;
+        h1 {
+            flex-grow: 1;
+            text-align: center;
+        }
+        a {
+            position: absolute;
+            right: 40px;
+            background-color: rgb(85, 85, 85);
+            padding: 12px 10px;
+            border-radius: 15px;
+        }
+        a:hover {
+            background-color: rgb(94, 94, 94);;
+        }
+    }
+}
+
+.index-menu {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid rgb(187, 187, 187);
+        border-radius: 10px;
+        gap: 15px;
+        padding: 10px 20px 10px;
+        button {
+            cursor: pointer;
+            font-size: x-large;
+            border: 2px solid rgb(187, 187, 187);
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: rgb(167, 166, 166);
+        }
+    }
+}
+.add-restaurant {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 10px;
+        border: 5px solid rgb(187, 187, 187);
+        padding: 10px 15px;
+        background-color: rgb(187, 187, 187);
+        input {
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+     }
+}
+
+.list-restaurant {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    div {
+        border: 5px solid rgb(187, 187, 187);
+        border-radius: 15px;
+        padding: 10px;
+    }
+    a:hover {
+        color: rgb(101, 101, 101);
+    }
+}
+
+.id-restaurant {
+    flex-grow: 1;
+    form {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            cursor: pointer;
+            color: white;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(137, 137, 137);
+        }
+        button:hover {
+            background-color: rgb(78, 78, 78) ;
+        } 
+    }
+}
