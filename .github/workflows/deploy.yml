@@ -23,11 +23,6 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Set environment variable for MONGO_URL
-        run: echo "MONGO_URL=${{ secrets.MONGO_URL }}" >> $GITHUB_ENV
-      - name: Set environment variable for API_KEY
-        run: echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
-
       - name: Build step
         run: "deno task build"
 
