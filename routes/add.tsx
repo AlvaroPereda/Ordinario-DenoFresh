@@ -1,7 +1,7 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Form from "../components/Form.tsx";
 import { validatePhoen } from "../utils/API_Nijas.ts";
-import initMongoDB from "../utils/database.ts";
+import  { prueba } from "../utils/database.ts";
 
 export const handler:Handlers = {
     GET: async(req:Request, ctx:FreshContext<unknown,boolean>) => {
@@ -12,8 +12,7 @@ export const handler:Handlers = {
         const phone = url.searchParams.get("phone")
         if (!name || !direction || !city || !phone) return ctx.render(undefined)
         if (!(await validatePhoen(phone)).is_valid) return ctx.render(false)
-        const RestaurantCollection = await initMongoDB()
-        await RestaurantCollection.insertOne({
+        await prueba.insertOne({
             name,
             direction,
             city,
