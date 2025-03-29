@@ -1,9 +1,12 @@
-import { MongoClient } from "mongodb"
+import { MongoClient, Collection } from "mongodb"
 import { RestaurantModel } from "./types.ts";
 
-
+let RestaurantCollection: Collection<RestaurantModel>
 
 export const initMongoDB = async() => {
+
+    if(RestaurantCollection) return RestaurantCollection
+
     const url = Deno.env.get("MONGO_URL")
     if(!url) throw new Error("Error con MONGO_URL")
     
@@ -12,9 +15,9 @@ export const initMongoDB = async() => {
     console.log("Conectado a mongodb")
 
     const db = client.db("restaurante")
-    const RestaurantCollection = db.collection<RestaurantModel>("places")
+    RestaurantCollection = db.collection<RestaurantModel>("places")
     
     return RestaurantCollection
 }
 
-export const prueba = await initMongoDB()
+export default initMongoDB

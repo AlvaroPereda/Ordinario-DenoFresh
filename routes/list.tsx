@@ -1,12 +1,13 @@
 // deno-lint-ignore-file jsx-key
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import ListRestaurant from "../components/ListRestaurant.tsx";
-import { prueba } from "../utils/database.ts";
+import initMongoDB from "../utils/database.ts";
 import { Restaurant, RestaurantModel } from "../utils/types.ts";
 
 export const handler:Handlers = {
     GET: async(_req:Request, ctx:FreshContext<unknown,Restaurant[]>) => {
-        const result:RestaurantModel[] = await prueba.find().toArray()
+        const RestauranteCollection = await initMongoDB()
+        const result:RestaurantModel[] = await RestauranteCollection.find().toArray()
         return ctx.render(result.map(e => ({
             id: e._id!.toString(),
             ...e
